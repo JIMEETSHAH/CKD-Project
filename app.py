@@ -25,6 +25,26 @@ def delete_user(Email):
     c.execute("DELETE FROM userstable WHERE Email="+"'"+Email+"'")
     conn.commit()
 
+def set_bg_hack_url():
+    '''
+    A function to unpack an image from url and set as bg.
+    Returns
+    -------
+    The background.
+    '''
+        
+    st.markdown(
+          f"""
+          <style>
+          .stApp {{
+              background: url("https://drsandeepnunia.com/wp-content/uploads/2024/01/Kidney-stone.jpeg");
+              background-size: cover
+          }}
+          </style>
+          """,
+          unsafe_allow_html=True
+      )
+set_bg_hack_url()
 st.subheader("Welcome To Chronic kidney disease (CKD) Prediction System")
 menu = ["Home","SignUp","Login"]
 choice = st.sidebar.selectbox("Menu",menu)
